@@ -1,7 +1,6 @@
-package org.foo;
-
-def checkOutFrom(repo) {
-  git url: "git@github.com:jenkinsci/${repo}"
+package org.foo
+class Utilities {
+  static def mvn(script, args) {
+    script.sh "${script.tool 'Maven'}/bin/mvn -s ${script.env.HOME}/jenkins.xml -o ${args}"
+  }
 }
-
-return this
